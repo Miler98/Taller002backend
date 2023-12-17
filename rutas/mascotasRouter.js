@@ -1,5 +1,5 @@
 import express from "express";
-import {crear,buscarId,buscar,actualizar,eliminar} from "../controladores/mascotasController.js";
+import {crear,buscarId,buscar,actualizar,eliminar} from "../controladores/mascotasControler.js";
 const routerMascotas = express.Router();
 
 routerMascotas.get("/",(req,res)=>{

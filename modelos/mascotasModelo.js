@@ -16,6 +16,11 @@ const mascotas = db.define("mascotas",{
         type: Sequelize.INTEGER,
         allowNull:true
     }
+},{
+    timestamps:false,
+    createdat:false,
+    updatedat:false
+
 });
 
 export {mascotas}

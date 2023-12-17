@@ -22,12 +22,8 @@ const crear = (req,res)=>{
         res.status(500).json({
             mensaje: `Error al crear el registro ::: ${err}`
         })
-
     })
-
-
 };
-
 
 //Buscar recurso por ID
 const buscarId = (req,res)=>{
@@ -38,7 +34,6 @@ const buscarId = (req,res)=>{
         });
         return;
     }
-
     mascotas.findByPk(id).then((resultado)=>{
         res.status(200).json(resultado);    
     }).catch((err)=>{
@@ -46,9 +41,7 @@ const buscarId = (req,res)=>{
             mensaje: `Registro no encontrado ::: ${err}`
         });
     });
-
 }
-
 
 //Buscar recurso por ID
 const buscar = (req,res)=>{
@@ -60,11 +53,9 @@ const buscar = (req,res)=>{
             mensaje: `No se encontraron Registros ::: ${err}`
         });
     });
-
 };
 
 //Actualizar un recurso
-
 const actualizar=(req,res)=>{
     const id= req.params.id;
     if(!req.body.nombre && !req.body.edad){
@@ -88,7 +79,6 @@ const actualizar=(req,res)=>{
             });
         })
     }
-
 };
 
 const eliminar=(req,res)=>{
@@ -107,16 +97,10 @@ const eliminar=(req,res)=>{
     })
     .catch((err)=>{
         res.status(500).json({
+            tipo: 'succes',
             mensaje: `Error al eliminar Registro ::: ${err}`
         });
     })
-    
-
 };
-
-
-
-
-
 
 export {crear,buscarId,buscar,actualizar,eliminar}
